@@ -1,557 +1,67 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <meta name="baidu-site-verification" content="L6Lm9d5Crl">
-  
-  
-  
   
   <title>the first blog base Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="author" content="lhj">
+  
   <meta name="description" content="description">
-<meta name="keywords" content="keywords">
-<meta property="og:type" content="website">
-<meta property="og:title" content="the first blog base Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="the first blog base Hexo">
-<meta property="og:description" content="description">
-<meta property="og:locale" content="en">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="the first blog base Hexo">
-<meta name="twitter:description" content="description">
-  
-    <link rel="alternative" href="/atom.xml" title="the first blog base Hexo" type="application/atom+xml">
   
   
-    <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
   
+  <meta property="og:site_name" content="the first blog base Hexo">
+
   
-  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+    <meta property="og:image" content>
   
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link href="/public/favicon.png" rel="icon">
+  <link rel="alternate" href="/public/atom.xml" title="the first blog base Hexo" type="application/atom+xml">
+  <link rel="stylesheet" href="/public/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
-    
-    
-  
-  
-      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  
-  <!-- 加载特效 -->
-    <script src="/js/pace.js"></script>
-    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet">
-  <script>
-      var yiliaConfig = {
-          fancybox: true,
-          animate: true,
-          isHome: true,
-          isPost: false,
-          isArchive: false,
-          isTag: false,
-          isCategory: false,
-          open_in_new: false
-      }
-  </script>
-</head></html>
+
+</head>
+</html>
+
 <body>
-  <div id="container">
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-    <header id="header" class="inner">
-        
-<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-
-        <a href="/" class="profilepic">
-            
-            <img lazy-src="/img/avatar.png" class="js-avatar">
-            
-        </a>
-        <hgroup>
-          <h1 class="header-author"><a href="/">lhj</a></h1>
-        </hgroup>
-        
-        <p class="header-subtitle">subtitle</p>
-        
-        
-            <form>
-                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
-            </form>
-            <div id="local-search-result"></div>
-        
-        
-            <script type="text/javascript">
-                (function() {
-                    'use strict';
-                    function getMatchData(keyword, data) {
-                        var matchData = [];
-                        for(var i =0;i<data.length;i++){
-                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
-                                matchData.push(data[i])
-                        }
-                        return matchData;
-                    }
-                    var $input = $('#local-search-input');
-                    var $resultContent = $('#local-search-result');
-                    $input.keyup(function(){
-                        $.ajax({
-                            url: '/search.json',
-                            dataType: "json",
-                            success: function( json ) {
-                                var str='<ul class=\"search-result-list\">';                
-                                var keyword = $input.val().trim().toLowerCase();
-                                $resultContent.innerHTML = "";
-                                if ($input.val().trim().length <= 0) {
-                                    $resultContent.empty();
-                                    $('#switch-area').show();
-                                    return;
-                                }
-                                var results = getMatchData(keyword, json);
-                                if(results.length === 0){
-                                    $resultContent.empty();
-                                    $('#switch-area').show();
-                                    return;
-                                } 
-                                for(var i =0; i<results.length; i++){
-                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
-                                }
-                                str += "</ul>";
-                                $resultContent.empty();
-                                $resultContent.append(str);
-                                $('#switch-area').hide();
-                            }
-                        });
-                    });
-                })();
-            </script>
-        
-        
-            <div id="switch-btn" class="switch-btn">
-                <div class="icon">
-                    <div class="icon-ctn">
-                        <div class="icon-wrap icon-house" data-idx="0">
-                            <div class="birdhouse"></div>
-                            <div class="birdhouse_holes"></div>
-                        </div>
-                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
-                            <div class="ribbon"></div>
-                        </div>
-                        
-                        <div class="icon-wrap icon-link hide" data-idx="2">
-                            <div class="loopback_l"></div>
-                            <div class="loopback_r"></div>
-                        </div>
-                        
-                        
-                        <div class="icon-wrap icon-me hide" data-idx="3">
-                            <div class="user"></div>
-                            <div class="shoulder"></div>
-                        </div>
-                        
-                    </div>
-                </div>
-                <div class="tips-box hide">
-                    <div class="tips-arrow"></div>
-                    <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
-                        
-                        <li>友情链接</li>
-                        
-                        
-                        <li>关于我</li>
-                        
-                    </ul>
-                </div>
-            </div>
-        
-        <div id="switch-area" class="switch-area">
-            <div class="switch-wrap">
-                <section class="switch-part switch-part1">
-                    <nav class="header-menu">
-                        <ul>
-                        
-                            <li><a  href="/archives/">所有文章</a></li>
-                        
-                            <li><a  href="/categories/开发工具/">玩转开发工具</a></li>
-                        
-                            <li><a  href="/categories/digital">玩转数码</a></li>
-                        
-                            <li><a  href="/categories/algorithm">算法学习</a></li>
-                        
-                            <li><a  href="/about/">关于我</a></li>
-                        
-                        </ul>
-                    </nav>
-                    <nav class="header-nav">
-                        <ul class="social">
-                            
-                                <a class="fl github"  target="_blank" href="/xxxxx" title="github">github</a>
-                            
-                                <a class="fl weibo"  target="_blank" href="/xxxxxxxx" title="weibo">weibo</a>
-                            
-                                <a class="fl rss"  target="_blank" href="/atom.xml" title="rss">rss</a>
-                            
-                        </ul>
-                    </nav>
-                </section>
-                
-                <section class="switch-part switch-part2">
-                    <div class="widget tagcloud" id="js-tagcloud">
-                        
-                    </div>
-                </section>
-                
-                
-                <section class="switch-part switch-part3">
-                    <div id="js-friends">
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://blog.csdn.net/baidu_21483933">csdn</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://segmentfault.com/blog/maocg_web">segmentfault</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.jianshu.com/users/eb37ef89c746/latest_articles">简书</a>
-                    
-                    </div>
-                </section>
-                
-                
-                
-                <section class="switch-part switch-part4">
-                
-                    <div id="js-aboutme">爱动漫,爱游戏,爱编程,爱运动,爱的太多了!</div>
-                </section>
-                
-            </div>
-        </div>
-    </header>
+  <header id="header"><div class="meta inner">
+  <h1><a href="/public/">the first blog base Hexo</a></h1>
+  <h2><a href="/public/">subtitle</a></h2>
+  <nav id="main-nav">
+    <ul>
+      
+      <li><a href="/about">About</a></li>
+      
+      <li><a href="/archives">Archives</a></li>
+      
+      <li><a href="/atom.xml">RSS</a></li>
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
 </div>
-
-    </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-      <div class="overlay">
-          <div class="slider-trigger"></div>
-          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">lhj</a></h1>
-      </div>
-    <div class="intrude-less">
-        <header id="header" class="inner">
-            <a href="/" class="profilepic">
-                
-                    <img lazy-src="/img/avatar.png" class="js-avatar">
-                
-            </a>
-            <hgroup>
-              <h1 class="header-author"><a href="/" title="回到主页">lhj</a></h1>
-            </hgroup>
-            
-            <p class="header-subtitle">subtitle</p>
-            
-            <nav class="header-menu">
-                <ul>
-                
-                    <li><a href="/archives/">所有文章</a></li>
-                
-                    <li><a href="/categories/开发工具/">玩转开发工具</a></li>
-                
-                    <li><a href="/categories/digital">玩转数码</a></li>
-                
-                    <li><a href="/categories/algorithm">算法学习</a></li>
-                
-                    <li><a href="/about/">关于我</a></li>
-                
-                <div class="clearfix"></div>
-                </ul>
-            </nav>
-            <nav class="header-nav">
-                <div class="social">
-                    
-                        <a class="github" target="_blank" href="/xxxxx" title="github">github</a>
-                    
-                        <a class="weibo" target="_blank" href="/xxxxxxxx" title="weibo">weibo</a>
-                    
-                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
-                    
-                </div>
-            </nav>
-        </header>
-    </div>
-</nav>
-      <div class="body-wrap">
-  
-    <article id="post-second" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/09/06/second/" class="article-date">
-      <time datetime="2019-09-06T08:46:04.000Z" itemprop="datePublished">2019-09-06</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/09/06/second/">second</a>
-    </h1>
-  
-
-
-      </header>
+<div class="clearfix"></div>
+</header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper">
+  <article class="post">
+  <div class="post-content">
+    <header>
       
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="叮当科技-2-0系统开发框架说明"><a href="#叮当科技-2-0系统开发框架说明" class="headerlink" title="叮当科技 2.0系统开发框架说明"></a>叮当科技 2.0系统开发框架说明</h1><p>优爆名品服装零售业务平台项目代码，基于Sping Clound、Spring Boot、Mybatis、Mysql等应用技术体系以API接口方式提供包括优爆的商品信息、门店管理、库存管理、会员管理、营销活动、系统用户、商城等零售业务应用服务。</p>
-<p>ddyx-2.0版本系统基于分布式微服务开发平台，采用springboot构建，采用maven多模块设计，集成springcloud各核心组件。<br>技术栈已使用包括：springboot，springcloud，config，eureka，gateway，feign，ribbon，<br>hystrix，turbine，mybatis，mybatis-plus，redis，swagger，actuator等。<br>陆续整合集成包括：bus，zipkin，oauth2，security，sso，kafka，elasticsearch。</p>
-<h2 id="后端框架"><a href="#后端框架" class="headerlink" title="后端框架"></a>后端框架</h2><table>
-<thead>
-<tr>
-<th>框架</th>
-<th>说明</th>
-<th>版本</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>[SpringBoot]</td>
-<td>基础开发框架</td>
-<td>2.1.6.RELEASE</td>
-</tr>
-<tr>
-<td>[SpringCloud]</td>
-<td>分布式框架</td>
-<td>Greenwich.RELEASE</td>
-</tr>
-<tr>
-<td>[MySQL]</td>
-<td>数据库服务器</td>
-<td>5.7</td>
-</tr>
-<tr>
-<td>[Druid]</td>
-<td>数据库连接池、监控组件</td>
-<td>1.1.16</td>
-</tr>
-<tr>
-<td>[MyBatis]</td>
-<td>数据持久层框架</td>
-<td>3.5.1</td>
-</tr>
-<tr>
-<td>[MyBatis-Plus]</td>
-<td>Mybatis 增强组件</td>
-<td>3.1.2</td>
-</tr>
-<tr>
-<td>[Eureka]</td>
-<td>服务注册发现</td>
-<td>2.1.2</td>
-</tr>
-<tr>
-<td>[Gateway]</td>
-<td>服务网关路由</td>
-<td>2.1.2</td>
-</tr>
-<tr>
-<td>[Feign]</td>
-<td>声明式远程调用通信</td>
-<td>2.1.2</td>
-</tr>
-<tr>
-<td>[Config]</td>
-<td>统一配置中心</td>
-<td>2.1.2</td>
-</tr>
-<tr>
-<td>[Hystrix]</td>
-<td>断路器服务及监控</td>
-<td>2.1.2</td>
-</tr>
-<tr>
-<td>[Turbine]</td>
-<td>断路器聚合监控</td>
-<td>2.1.2</td>
-</tr>
-<tr>
-<td>[Ribbon]</td>
-<td>客户端负载均衡通信</td>
-<td>2.1.2</td>
-</tr>
-<tr>
-<td>[Actuator]</td>
-<td>微服务应用可视化监控</td>
-<td>2.1.2</td>
-</tr>
-<tr>
-<td>[Redis]</td>
-<td>缓存数据库</td>
-<td>2.9.1</td>
-</tr>
-<tr>
-<td>[Orika]</td>
-<td>Javabean封装组件</td>
-<td>1.5.4</td>
-</tr>
-<tr>
-<td>[Springfox-swagger2]</td>
-<td>API文档、接口调试</td>
-<td>2.9.2</td>
-</tr>
-<tr>
-<td>[Swagger-bootstrap-ui]</td>
-<td>Swagger 增强UI实现</td>
-<td>1.9.3</td>
-</tr>
-<tr>
-<td>[Java-Validation]</td>
-<td>数据验证组件</td>
-<td>4.2</td>
-</tr>
-<tr>
-<td>[Hibernate-Validation]</td>
-<td>后台参数校验注解</td>
-<td>6.0.17.Final</td>
-</tr>
-<tr>
-<td>[PageHelper]</td>
-<td>分页插件</td>
-<td>1.2.12</td>
-</tr>
-<tr>
-<td>[logback]</td>
-<td>日志框架</td>
-<td>1.2.3</td>
-</tr>
-</tbody></table>
-<h2 id="模块结构："><a href="#模块结构：" class="headerlink" title="模块结构："></a>模块结构：</h2><ul>
-<li>ddyx-common  公共组件，包含基础工具包，依赖信息、数据源配置，异常处理等核心框架；</li>
-<li>ddyx-generator 代码生成器，采用mybatis-plus组件；</li>
-<li>ddyx-config  系统统一配置中心（默认使用本地配置信息）；</li>
-<li>ddyx-eureka  服务注册中心；</li>
-<li>ddyx-gateway  系统网关路由，swagger文档聚合；</li>
-<li>ddyx-hystrix  服务断路器监控；</li>
-<li>ddyx-turbine  服务断路器聚合监控；</li>
-<li>ddyx-monitor  服务可视化监控模块；</li>
-<li>ddyx-service-user  用户服务父模块</li>
-<li>ddyx-service-user-api  用户服务子模块，定义远程调用接口、实体类、VO对象；</li>
-<li>ddyx-service-user-app  用户服务子模块，处理核心业务逻辑及数据访问；</li>
-<li>ddyx-service-product  商品服务父模块</li>
-<li>ddyx-service-product-api  商品服务子模块，定义远程调用接口、实体类、VO对象；</li>
-<li>ddyx-service-product-app  商品服务子模块，处理核心业务逻辑及数据访问；</li>
-</ul>
-<h3 id="模块包体说明"><a href="#模块包体说明" class="headerlink" title="模块包体说明"></a>模块包体说明</h3><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">ddyx</span><br><span class="line">├── ddyx-common <span class="comment">-- 系统公共模块 </span></span><br><span class="line">     └── base <span class="comment">-- 基础组件定义</span></span><br><span class="line">     └── framework <span class="comment">-- 核心组件配置</span></span><br><span class="line">     └── utils <span class="comment">-- 基本工具包</span></span><br><span class="line">├── ddyx-generator <span class="comment">-- 代码生成器</span></span><br><span class="line">├── ddyx-<span class="built_in">config</span> <span class="comment">-- 统一配置中心[8888]</span></span><br><span class="line">├── ddyx-eureka <span class="comment">-- 服务注册与发现[8761]</span></span><br><span class="line">├── ddyx-gateway <span class="comment">-- 服务网关路由[9001]</span></span><br><span class="line">├── ddyx-hystrix <span class="comment">-- 服务断路器监控[8605]</span></span><br><span class="line">├── ddyx-turbine <span class="comment">-- 服务断路器聚合监控[9605]</span></span><br><span class="line">├── ddyx-monitor <span class="comment">-- 服务可视化监控[7008]</span></span><br><span class="line">└── ddyx-service-user <span class="comment">-- 用户服务模块</span></span><br><span class="line">     └── ddyx-service-user-api <span class="comment">-- 子模块，定义远程调用接口、实体类、VO对象</span></span><br><span class="line">            └── entity <span class="comment">-- 数据库映射实体类</span></span><br><span class="line">            └── feign <span class="comment">-- 远程调用接口定义</span></span><br><span class="line">            └── vo <span class="comment">-- 封装数据传递对象</span></span><br><span class="line">     └── ddyx-service-user-app <span class="comment">-- 子模块，处理核心业务逻辑及数据访问</span></span><br><span class="line">            └── <span class="built_in">config</span> <span class="comment">-- 配置</span></span><br><span class="line">            └── system <span class="comment">-- 业务核心开发模块</span></span><br><span class="line">                  └── controller <span class="comment">-- restful接口</span></span><br><span class="line">                  └── mapper <span class="comment">-- 数据访问接口层</span></span><br><span class="line">                  └── service <span class="comment">-- 业务逻辑接口定义</span></span><br><span class="line">                         └── impl <span class="comment">-- 业务逻辑接口实现</span></span><br><span class="line">└── ddyx-service-product  <span class="comment">-- 商品服务模块（包结构与用户模块一致）</span></span><br><span class="line">     └── ddyx-service-product-api <span class="comment">-- 子模块，定义远程调用接口、实体类、VO对象</span></span><br><span class="line">     └── ddyx-service-product-app <span class="comment">-- 子模块，处理核心业务逻辑及数据访问</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="开发说明："><a href="#开发说明：" class="headerlink" title="开发说明："></a>开发说明：</h2><ul>
-<li>业务模块分开api、app两个子模块，主要考虑底层数据互通及远程接口调用都需要互相依赖api；</li>
-<li>建议service服务层接口定义采用VO对象做数据传输；VO对象需要自行创建编写，代码生成器可以创建实体类；</li>
-<li>整合多数据源，service层可直接使用注解进行数据源切换，具体看user模块使用；</li>
-<li>新系统舍弃了web层RequestForm、ResponseForm对象的使用，建议采用restful形式提供接口定义及业务对象数据的输入输出；</li>
-<li>controller层接收json数据建议采用VO对象封装，可以较好的搭配swagger插件进行接口调试，swagger插件注解添加在VO对象；</li>
-<li>系统集成了JavaBean映射工具orika，可以对VO对象、数据库entity实体类进行数据转换； </li>
-<li>集成了验证框架javax.validation、hibernate-validator  两种验证框架并用；验证注解全部添加到vo对象及controller层;</li>
-<li>系统启动建议使用根路径XxxApplication程序主入口启动方式运行，也可以部署外部tomcat、jetty等容器；</li>
-<li>业务实现可以参考用户模块user的处理，包括swagger注解、数据验证注解、数据源切换注解等；</li>
-<li>整合三方工具包时，建议依赖比较新的稳定的版本，在整合过程中发现很多工具包依赖还是比较老旧的版本，需要特殊处理；</li>
-</ul>
-<h2 id="启动部署"><a href="#启动部署" class="headerlink" title="启动部署"></a>启动部署</h2><ul>
-<li>1.启动注册中心 ddyx-eureka 端口8761</li>
-<li>2.启动用户服务 ddyx-service-user-app 端口8080</li>
-<li>3.启动商品服务 ddyx-service-product-app 端口8081</li>
-<li>4.启动网关路由 ddyx-gateway 端口9001</li>
-<li>5.启动断路器监控 ddyx-hystrix 端口8605(不是必须，需要查看监控可启动)</li>
-<li>6.启动断路器聚合监控 ddyx-turbine 端口9605(不是必须，需要查看监控可启动)</li>
-<li>7.启动服务可视化监控 ddyx-monitor 端口7008(不是必须，需要查看监控可启动)</li>
-</ul>
-<h2 id="访问："><a href="#访问：" class="headerlink" title="访问："></a>访问：</h2><p>swagger接口调试(两种UI风格都可以使用)：</p>
-<ul>
-<li>接口调试地址（bootstrap-UI）： <a href="http://localhost:9001/doc.html" target="_blank" rel="noopener">http://localhost:9001/doc.html</a></li>
-<li>接口调试地址（默认UI）：       <a href="http://localhost:9001/swagger-ui.html" target="_blank" rel="noopener">http://localhost:9001/swagger-ui.html</a></li>
-</ul>
-<p>druid数据库连接池：</p>
-<ul>
-<li>用户模块监控地址：<a href="http://localhost:8080/druid/login.html" target="_blank" rel="noopener">http://localhost:8080/druid/login.html</a></li>
-<li>商品模块监控地址：<a href="http://localhost:8081/druid/login.html" target="_blank" rel="noopener">http://localhost:8081/druid/login.html</a></li>
-<li>账号： admin/druidadmin (DruidConfig中定义)</li>
-</ul>
-<p>eureka服务注册中心：</p>
-<ul>
-<li>服务注册中心：    <a href="http://localhost:8761/" target="_blank" rel="noopener">http://localhost:8761/</a></li>
-</ul>
-<p>hystrix断路器监控：</p>
-<ul>
-<li>断路器监控：  <a href="http://localhost:8605/hystrix" target="_blank" rel="noopener">http://localhost:8605/hystrix</a></li>
-<li>断路器聚合监控：  <a href="http://localhost:9605/turbine" target="_blank" rel="noopener">http://localhost:9605/turbine</a></li>
-</ul>
-<p>springboot-admin监控：</p>
-<ul>
-<li>服务可视化监控：<a href="http://localhost:7008" target="_blank" rel="noopener">http://localhost:7008</a></li>
-<li>账号:  username/password  (ddyx-monitor模块配置文件中定义)</li>
-</ul>
+  
+    <h1 class="title"><a href="/public/2019/09/06/hello-world/">Hello World</a></h1>
+  
 
       
-    </div>
-    
-    <div class="article-info article-info-index">
+        <time datetime="2019-09-06T03:54:24.636Z">2019-09-06</time>
       
+    </header>
+    <div class="entry">
       
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/09/06/hello-world/" class="article-date">
-      <time datetime="2019-09-06T03:54:24.636Z" itemprop="datePublished">2019-09-06</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/09/06/hello-world/">Hello World</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
         <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 
@@ -568,18 +78,13 @@
 
       
     </div>
-    
-    <div class="article-info article-info-index">
       
-      
-
-      
+        
+        
       
       <div class="clearfix"></div>
-    </div>
-    
+      </footer>
   </div>
-  
 </article>
 
 
@@ -587,134 +92,48 @@
 
 
 
-
-
-
-
-
+<nav id="pagination">
   
   
-
+  <div class="clearfix"></div>
+</nav></div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:192.168.1.119:4000/public">
+  </form>
 </div>
-      <footer id="footer">
-    <div class="outer">
-        <div id="footer-info">
-            <div class="footer-left">
-                &copy; 2019 lhj
-            </div>
-            <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank">Hexo &nbsp;&nbsp;</a><a href="https://github.com/maochunguang" target="_blank">Blog</a> by tommy
-            </div>
-        </div>
-        
-            <div class="visit">
-                
-                    <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" >极客到访数: 
-                            <span id="busuanzi_value_site_uv"></span>
-                        </span>
-                    </span>
-                
-                
-                    <span>, </span>
-                
-                
-                    <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit">本页阅读量: 
-                            <span id="busuanzi_value_page_pv"></span>
-                        </span>
-                    </span>
-                
-            </div>
-        
-    </div>
-</footer>
 
-    </div>
+  
+<div class="widget tag">
+  <h3 class="title">Recent Posts</h3>
+  <ul class="entry">
     
-<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-
-<script src="/js/main.js"></script>
-
-    <script>
-        $(document).ready(function() {
-            var backgroundnum = 1;
-            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
-            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
-            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
-        })
-    </script>
-
-
-<!-- Google Analytics -->
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'xxxxx', 'auto');
-ga('send', 'pageview');
-
-</script>
-<!-- End Google Analytics -->
-
-
-
-	<script>
-	var _hmt = _hmt || [];
-	(function() {
-	  var hm = document.createElement("script");
-	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
-	  var s = document.getElementsByTagName("script")[0]; 
-	  s.parentNode.insertBefore(hm, s);
-	})();
-	</script>
-
-
-
-<div class="scroll" id="scroll">
-    <a href="#"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+      <li>
+        <a href="/public/2019/09/06/hello-world/">Hello World</a>
+      </li>
+    
+  </ul>
 </div>
-<script>
-    $(document).ready(function() {
-        if ($("#comments").length < 1) {
-            $("#scroll > a:nth-child(2)").hide();
-        };
-    })
-</script>
-
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-
-  <script language="javascript">
-    $(function() {
-        $("a[title]").each(function() {
-            var a = $(this);
-            var title = a.attr('title');
-            if (title == undefined || title == "") return;
-            a.data('title', title).removeAttr('title').hover(
-            function() {
-                var offset = a.offset();
-                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
-                    top: offset.top - a.outerHeight() - 15,
-                    left: offset.left + a.outerWidth()/2 + 1
-                }).fadeIn(function() {
-                    var pop = $(this);
-                    setTimeout(function() {
-                        pop.remove();
-                    }, pop.text().length * 800);
-                });
-            }, function() {
-                $("#anchortitlecontainer").remove();
-            });
-        });
-    });
-</script>
 
 
+  
+
+  
+</aside>
+    <div class="clearfix"></div>
   </div>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2019 lhj
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+
+<script src="/public/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/public/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
 </html>
+
