@@ -89,7 +89,7 @@ theme: blackblue
 deploy:
   type: git
   repo: https://github.com/nulllpoint/nulllpoint.github.io.git 
-  branch: static 
+  branch: master 
 
 # live2d
 live2d:
