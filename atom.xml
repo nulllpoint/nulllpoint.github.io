@@ -3,11 +3,11 @@
   <title>the first blog base Hexo</title>
   
   <subtitle>subtitle</subtitle>
-  <link href="/public/atom.xml" rel="self"/>
+  <link href="/atom.xml" rel="self"/>
   
-  <link href="http://192.168.1.119:4000/public/"/>
+  <link href="https://nulllpoint.github.io/"/>
   <updated>2019-09-06T03:54:24.636Z</updated>
-  <id>http://192.168.1.119:4000/public/</id>
+  <id>https://nulllpoint.github.io/</id>
   
   <author>
     <name>lhj</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://192.168.1.119:4000/public/2019/09/06/hello-world/"/>
-    <id>http://192.168.1.119:4000/public/2019/09/06/hello-world/</id>
+    <link href="https://nulllpoint.github.io/2019/09/06/hello-world/"/>
+    <id>https://nulllpoint.github.io/2019/09/06/hello-world/</id>
     <published>2019-09-06T03:54:24.636Z</published>
     <updated>2019-09-06T03:54:24.636Z</updated>
     
